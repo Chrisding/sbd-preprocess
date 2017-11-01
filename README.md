@@ -1,5 +1,5 @@
 # sbd-preprocess
-SBD Dataset proprocessing code for **`CASENet`**
+SBD Dataset proprocessing code for **CASENet**
 
 ### License
 
@@ -21,3 +21,19 @@ If you find **CASENet** useful in your research, please consider to cite:
     }
 
 ### Usage
+**Note:** In this part, we assume you are in the directory **`$SBD_PREPROCESS_ROOT/`**
+
+1. Download the SBD dataset tarball to **`data_orig/`** and untar it.
+
+	```Shell
+	wget -O ./data_orig/bencharmk.tgz "http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/semantic_contours/benchmark.tgz"
+	tar -xvzf ./data_orig/bencharmk.tgz -C ./data_orig/
+	```
+2. Run the matlab code to preprocess the data.
+
+	```Matlab
+	# In Matlab Command Window
+	run code/demo_preprocess.m
+	```
+    This will perform data augmentation, generate .bin edge labels that could be read by CASENet, and create the corresponding file lists in **`data_aug/`**.
+

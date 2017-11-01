@@ -16,9 +16,9 @@ clc; clear; close all;
 %% Parameters
 dataRoot = '../data_orig/benchmark_RELEASE/dataset';
 genDataRoot = '../data_aug';
-scaleSet = [0.5 0.75 1 1.25 1.5]; % Set of scales to be augmented on SBD
+scaleSet = [0.5 0.75 1 1.25 1.5]; % Set of scales to be augmented on SBD (default values of the CASENet CVPR paper)
 numCls = 20; % Number of defined semantic classes in SBD
-radius = 2; % Defined search radius for label changes (related to edge thickness)
+radius = 2; % Defined search radius for label changes (related to edge thickness, default value of the CASENet CVPR paper)
 edge_type = 'regular';
 
 %% Setup Parallel Pool
