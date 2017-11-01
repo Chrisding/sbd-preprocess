@@ -26,6 +26,7 @@ If you find **CASENet** useful in your research, please consider to cite:
 1. Download the SBD dataset tarball to **`data_orig/`** and untar it.
 
 	```Shell
+	mkdir data_orig
 	wget -O ./data_orig/bencharmk.tgz "http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/semantic_contours/benchmark.tgz"
 	tar -xvzf ./data_orig/bencharmk.tgz -C ./data_orig/
 	```
