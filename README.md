@@ -20,8 +20,15 @@ If you find **CASENet** useful in your research, please consider to cite:
         Year = {2017}
     }
 
+    @inproceedings{yu2018seal,
+        author = {Yu, Zhiding and Liu, Weiyang and Zou, Yang and Feng, Chen and Ramalingam, Srikumar and Kumar, B. V. K. Vijaya and Kautz, Jan},
+        title = {Simultaneous Edge Alignment and Learning},
+        booktitle = {Proceedings of the European Conference on Computer Vision},
+        Year = {2018}
+    }
+
 ### Usage
-**Note:** In this part, we assume you are in the directory **`$SBD_PREPROCESS_ROOT/`**
+**Note:** In this part, we assume you are in the directory **`$SBD_PREPROCESS_ROOT/`**.
 
 1. Download the SBD dataset tarball to **`data_orig/`** and untar it.
 
@@ -36,5 +43,8 @@ If you find **CASENet** useful in your research, please consider to cite:
 	# In Matlab Command Window
 	run code/demo_preprocess.m
 	```
-    This will perform data augmentation, generate .bin edge labels that could be read by CASENet, and create the corresponding file lists in **`data_aug/`**.
+    This will perform data augmentation, and generate the .bin edge labels and the corresponding file lists that could be read by CASENet in **`data_aug/`**.
 
+### Related toolkit
+
+The repository of the Cityscapes preprocessing code can be found [here](https://github.com/Chrisding/cityscapes-preprocess).
