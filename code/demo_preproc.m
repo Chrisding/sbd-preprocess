@@ -9,20 +9,20 @@
 % 3. Create caffe filelists for the augmented data
 % --------------------------------------------------------
 
-function demo_preprocess()
+function demo_preproc()
 
 clc; clear; close all;
 
 %% Parameters
-dataRoot = '../data_orig/benchmark_RELEASE/dataset';
-genDataRoot = '../data_aug';
+dataRoot = '../data_orig';
+genDataRoot = '../data_proc';
 scaleSet = [0.5 0.75 1 1.25 1.5]; % Set of scales to be augmented on SBD (default values of the CASENet CVPR paper)
 numCls = 20; % Number of defined semantic classes in SBD
 radius = 2; % Defined search radius for label changes (related to edge thickness, default value of the CASENet CVPR paper)
 edge_type = 'regular';
 
 %% Setup Parallel Pool
-numWorker = 20; % Number of matlab workers for parallel computing
+numWorker = 12; % Number of matlab workers for parallel computing
 matlabVer = version('-release');
 if( str2double(matlabVer(1:4)) > 2013 || (str2double(matlabVer(1:4)) == 2013 && strcmp(matlabVer(5), 'b')) )
     delete(gcp('nocreate'));
@@ -124,10 +124,10 @@ for setID = 1:length(setList)
     % Write file lists
     disp(['Creating ' setName ' set file lists'])
     if(strcmp(setName, 'train'))
-        fidListTrainAug = fopen([genDataRoot '/list_train_aug.txt'], 'w');
-        fidListTrain = fopen([genDataRoot '/list_train.txt'], 'w');
+        fidListTrainAug = fopen([genDataRoot '/train_aug.txt'], 'w');
+        fidListTrain = fopen([genDataRoot '/train.txt'], 'w');
     else
-        fidListTest = fopen([genDataRoot '/list_test.txt'], 'w');
+        fidListTest = fopen([genDataRoot '/test.txt'], 'w');
     end
     
     parfor_progress(countFile);

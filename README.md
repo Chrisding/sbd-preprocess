@@ -30,20 +30,19 @@ If you find **CASENet** useful in your research, please consider to cite:
 ### Usage
 **Note:** In this part, we assume you are in the directory **`$SBD_PREPROCESS_ROOT/`**.
 
-1. Download the SBD dataset tarball to **`data_orig/`** and untar it.
+1. Download the SBD dataset tarball to **`data_orig/`** and untar the dataset subfolder.
 
 	```Shell
-	mkdir data_orig
-	wget -O ./data_orig/bencharmk.tgz "http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/semantic_contours/benchmark.tgz"
-	tar -xvzf ./data_orig/bencharmk.tgz -C ./data_orig/
+	wget -O ./data_orig/benchmark.tgz "http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/semantic_contours/benchmark.tgz"
+	tar -xvzf ./data_orig/benchmark.tgz -C ./data_orig/ benchmark_RELEASE/dataset --strip 2 && rm ./data_orig/benchmark.tgz
 	```
 2. Run the matlab code to preprocess the data.
 
 	```Matlab
 	# In Matlab Command Window
-	run code/demo_preprocess.m
+	run code/demo_preproc.m
 	```
-    This will perform data augmentation, and generate the .bin edge labels and the corresponding file lists that could be read by CASENet in **`data_aug/`**.
+    This will perform data augmentation, and generate the .bin edge labels and the corresponding file lists that could be read by CASENet in **`data_proc/`**.
 
 ### Related toolkit
 
